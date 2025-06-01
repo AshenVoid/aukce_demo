@@ -22,3 +22,12 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    logo = models.ImageField(upload_to='category_logos/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
