@@ -31,3 +31,20 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+class Auction(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    photo = models.ImageField(upload_to='auction_photos/', null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    minimal_bid = models.DecimalField(max_digits=10, decimal_places=2)
+    buyout_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    propagation = models.BooleanField(default=False)
+    locality = models.CharField(max_length=200)
+    date_start = models.DateTimeField()
+    date_end = models.DateTimeField()
+    views = models.PositiveIntegerField(default=0)
+    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
