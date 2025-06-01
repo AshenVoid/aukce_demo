@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from .models import Auction
 
 def home(request):
-    return render(request, 'hlavni/home.html')
+    auctions = Auction.objects.all().order_by('-date_start')[:12]  # posledních 12
+    return render(request, 'hlavni/home.html', {'auctions': auctions})
 
 
 def login_view(request):
