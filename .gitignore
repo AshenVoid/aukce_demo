@@ -1,0 +1,20 @@
+# Python cache
+*.pyc
+__pycache__/
+
+# Django database
+db.sqlite3
+
+# Virtual environment
+env/
+venv/
+
+# IDE/editor files
+.vscode/
+../../.idea/
+
+# Static/media (pokud generuješ)
+staticfiles/
+media/
+
+.env
