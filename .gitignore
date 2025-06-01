@@ -18,3 +18,5 @@ staticfiles/
 media/
 
 .env
+.idea/
+*.iml
