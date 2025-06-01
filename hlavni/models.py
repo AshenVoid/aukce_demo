@@ -58,3 +58,11 @@ class Bids(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.bid} on {self.auction}"
+
+
+class Tracking(models.Model):
+    auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user} is tracking {self.auction}"
