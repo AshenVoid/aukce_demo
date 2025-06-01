@@ -116,7 +116,6 @@ import os
 # Debug pouze lokálně
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-# Render přidává vlastní doménu do $RENDER_EXTERNAL_HOSTNAME
 RENDER_EXTERNAL_HOSTNAME = os.getenv('RENDER_EXTERNAL_HOSTNAME')
 ALLOWED_HOSTS = ['localhost']
 if RENDER_EXTERNAL_HOSTNAME:
