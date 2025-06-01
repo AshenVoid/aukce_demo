@@ -66,3 +66,15 @@ class Tracking(models.Model):
 
     def __str__(self):
         return f"{self.user} is tracking {self.auction}"
+
+
+class Review(models.Model):
+    auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
+    reviewer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviewer')
+    reviewed = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviewed')
+    comment = models.TextField()
+    review = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.reviewer} adds a review to {self.reviewed}"
+
