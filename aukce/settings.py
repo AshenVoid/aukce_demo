@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['powerful-appreciation.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
