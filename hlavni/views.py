@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import render, redirect
 from .models import Auction
 
 def home(request):
-    auctions = Auction.objects.all().order_by('-date_start')[:12]  # posledních 12
+    auctions = Auction.objects.all().order_by('-date_start')[:12]
     return render(request, 'hlavni/home.html', {'auctions': auctions})
 
 
@@ -20,3 +21,8 @@ def auction_detail(request):
 
 def bid(request):
     return render(request, 'hlavni/bid.html', {'auction_id': id})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
