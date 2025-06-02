@@ -1,0 +1,1 @@
+web: gunicorn aukce.wsgi
