@@ -1,24 +1,10 @@
 {% extends 'hlavni/base.html' %}
-
 {% block content %}
-<div class="flex justify-center items-center min-h-screen bg-gray-100">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-        <h2 class="text-2xl font-bold mb-4 text-center">Přihlášení</h2>
-        <form method="post">
-            {% csrf_token %}
-            <div class="mb-4">
-                <label class="block mb-1">Uživatelské jméno</label>
-                <input type="text" name="username" class="w-full border px-3 py-2 rounded" required>
-            </div>
-            <div class="mb-4">
-                <label class="block mb-1">Heslo</label>
-                <input type="password" name="password" class="w-full border px-3 py-2 rounded" required>
-            </div>
-            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
-                Přihlásit se
-            </button>
-        </form>
-    </div>
-</div>
+<h2 class="text-2xl font-bold mb-4">Přihlášení</h2>
+<form method="post" class="space-y-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Přihlásit se</button>
+</form>
 {% endblock %}
 
