@@ -18,9 +18,9 @@ def register_view(request):
         if form.is_valid():
             form.save()
             return redirect('login')
-        else:
-            form = UserCreationForm()
-        return render(request, 'hlavni/register.html', {'form': form})
+    else:
+        form = UserCreationForm()
+    return render(request, 'hlavni/register.html', {'form': form})
 
 
 def auction_detail(request):
